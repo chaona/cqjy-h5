@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>个人中心</title>
+
+<link href="https://cdn.bootcdn.net/ajax/libs/weui/2.3.0/style/weui.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="static/css/weui.min.css">
+<link rel="stylesheet" href="static/css/my.css">
+<script src="static/js/zepto.min.js"></script>
+</head>
+<body>
+<div class="wrap content">
+
+    <!-- 头部 -->
+    <div class="head-box">
+        <div class="logo">
+            <img class="logo-img" src="static/images/my@teacher-avatar.jpg">
+            <p class="title">*</p>
+        </div>
+        <div class="top-left">
+            <!-- <img src="static/images/home@code.png"> -->
+        </div>
+        <div class="top-right">
+            <a href="search.html"><img src="static/images/home@search.png"></a>
+        </div>
+        <!-- 菜单 -->
+        <div class="menu">
+            <a href="borrow.html">
+                <div class="menu-img">
+                    <img src="static/images/home@borrowing.png">
+                    <p>在借中</p>
+                    <span class="tips-number" id="borrowing_number" style="display: none;">0</span>
+                </div>
+            </a>
+            <a href="borrow.html#tab2">
+                <div class="menu-img">
+                    <img src="static/images/home@overdue.png">
+                    <p>将过期</p>
+                    <span class="tips-number" id="will_number" style="display: none;">0</span>
+                </div>
+            </a>
+            <a href="borrow.html#tab3">
+                <div class="menu-img">
+                    <img src="static/images/home@overdued.png">
+                    <p>已过期</p>
+                    <span class="tips-number" id="expire_number" style="display: none;">0</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="user-profile">
+        <a href="my-profile.html"><img src="static/images/my@user-profile.png">个人资料</a>
+    </div>
+
+    <div class="password-edit">
+        <a href="password.html"><img src="static/images/my@password-edit.png">修改密码</a>
+    </div>
+
+    <div class="user-info-box">
+        <div class="weui-flex">
+            <div class="weui-flex__item"><div class="placeholder">积分数值</div><p class="info-number integral">0</p></div>
+            <div class="weui-flex__item"><div class="placeholder">借阅次数</div><p class="info-number borrow_book_total">0</p></div>
+            <div class="weui-flex__item"><div class="placeholder">可借书数</div><p class="info-number borrow_book_num">0</p></div>
+        </div>
+        <div class="weui-flex info-box-2">
+            <div class="weui-flex__item"><div class="placeholder">可借天数</div><p class="info-number borrow_day">0</p></div>
+            <div class="weui-flex__item"><div class="placeholder">可续借天数</div><p class="info-number renew_day">0</p></div>
+            <div class="weui-flex__item"><div class="placeholder">违规次数</div><p class="info-number ">0</p></div>
+        </div>
+    </div>
+
+    <a href="javascript:" id="unlock-action" class="weui-btn_cell weui-btn_cell-primary">解除绑定</a>
+</div>
+
+<!-- <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script> -->
+<script src="static/js/common.js"></script>
+<script src="static/js/my.js"></script>
+</body>
+</html>

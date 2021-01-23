@@ -1,0 +1,39 @@
+body { 
+	background-color: #f7f7f7;
+}
+
+body {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.topbar {
+	background-color: #00B25E;
+	height: 120px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.topbar .bind-card {
+	width: 100px;
+}
+
+.wrap {
+	padding-top: 20px;
+}
+
+.wrap .weui-cells .weui-cell {
+	color: #465566;
+	font-size: 14px;
+}
+
+.wrap .submit-action {
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.wrap .submit-action .weui-btn {
+	width: 100%;
+}

@@ -1,0 +1,63 @@
+body { 
+	background-color: #f7f7f7;
+}
+
+body {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.wrap {
+	color: #465566;
+	font-size: 14px;
+}
+
+.topbar {
+	height: 50px;
+	background-color: #07C160;
+	display: flex;
+	align-items: center;
+}
+
+.face {
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.face .face-img {
+	width: 150px;
+	border-radius: 10px;
+}
+
+.card-number {
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	padding: 10px;
+}
+
+.card-number .text {
+	background-color: #ffffff;
+	font-size: 16px;
+}
+
+.error {
+	color: #FA5151;
+}
+
+.go-back {
+	height: 20px;
+	padding-left: 20px;
+}
+
+.wrap .submit-action {
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.wrap .submit-action .weui-btn {
+	width: 100%;
+}

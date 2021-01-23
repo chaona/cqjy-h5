@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>我的</title>
+
+<link href="https://cdn.bootcdn.net/ajax/libs/weui/2.3.0/style/weui.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="static/css/weui.min.css">
+<link rel="stylesheet" href="static/css/my-profile.css">
+<script src="static/js/zepto.min.js"></script>
+
+</head>
+<body>
+<div class="wrap content">
+	<div class="weui-cells__group weui-cells__group_form">
+		<div class="weui-cells weui-cells_form">
+			<div class="weui-cell weui-cell_active weui-cell_readonly">
+				<div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
+				<div class="weui-cell__bd">
+					<input id="reader_name" class="weui-input" placeholder="" value="" readonly="">
+				</div>
+			</div>
+			<div class="weui-cell weui-cell_active weui-cell_disabled">
+				<div class="weui-cell__hd"><label class="weui-label">读者账号</label></div>
+				<div class="weui-cell__bd">
+					<input id="icid_num" class="weui-input" placeholder="" value="" disabled="">
+				</div>
+			</div>
+			<div class="weui-cell weui-cell_active weui-cell_disabled">
+				<div class="weui-cell__hd"><label class="weui-label">身份证号</label></div>
+				<div class="weui-cell__bd">
+					<input id="twocard_id" class="weui-input" placeholder="" value="" disabled="">
+				</div>
+			</div>
+			<div class="weui-cell weui-cell_active weui-cell_disabled">
+				<div class="weui-cell__hd"><label class="weui-label">读者证类型</label></div>
+				<div class="weui-cell__bd">
+					<input id="reader_type_name" class="weui-input" placeholder="" value="" disabled="">
+				</div>
+			</div>
+			<div class="weui-cell weui-cell_active weui-cell_disabled">
+				<div class="weui-cell__hd"><label class="weui-label">读者证押金</label></div>
+				<div class="weui-cell__bd">
+					<input id="money" class="weui-input" placeholder="" value="" disabled="">
+				</div>
+			</div>
+		</div>
+
+		<div class="weui-cells weui-cells_form">
+			<div class="weui-cell weui-cell_active weui-cell_readonly">
+				<div class="weui-cell__hd"><label class="weui-label">开户馆</label></div>
+				<div class="weui-cell__bd">
+					<input class="weui-input" placeholder="" value="重庆交通职业学院图书馆" readonly="">
+				</div>
+			</div>
+			<div class="weui-cell weui-cell_active weui-cell_disabled">
+				<div class="weui-cell__hd"><label class="weui-label">启动日期</label></div>
+				<div class="weui-cell__bd">
+					<input id="create_time" class="weui-input" placeholder="请输入启动日期" value="" disabled="">
+				</div>
+			</div>
+			<!-- <div class="weui-cell weui-cell_active weui-cell_disabled">
+				<div class="weui-cell__hd"><label class="weui-label">终止日期</label></div>
+				<div class="weui-cell__bd">
+					<input class="weui-input" placeholder="" value="2045-12-30" disabled="">
+				</div>
+			</div> -->
+		</div>
+
+		<div class="weui-cells weui-cells_form">
+			<div class="weui-cell weui-cell_active weui-cell_readonly">
+				<div class="weui-cell__hd"><label class="weui-label">联系电话</label></div>
+				<div class="weui-cell__bd">
+					<input id="cell_phone" class="weui-input" placeholder="" value="" readonly="">
+				</div>
+			</div>
+			<div class="weui-cell weui-cell_active weui-cell_disabled">
+				<div class="weui-cell__hd"><label class="weui-label">住址</label></div>
+				<div class="weui-cell__bd">
+					<input id="address" class="weui-input" placeholder="" value="" disabled="">
+				</div>
+			</div>
+			<!-- <div class="weui-cell weui-cell_active weui-cell_disabled">
+				<div class="weui-cell__hd"><label class="weui-label">邮箱</label></div>
+				<div class="weui-cell__bd">
+					<input class="weui-input" placeholder="" value="liukai3217@126.com" disabled="">
+				</div>
+			</div> -->
+		</div>
+	</div>
+
+	<div class="submit-action">
+		<a href="profile.html" class="weui-btn weui-btn_primary">修改信息</a>
+	</div>
+</div>
+<!--BEGIN toast-->
+<div id="warnToast" style="display: none;">
+    <div class="weui-mask_transparent"></div>
+    <div class="weui-toast">
+        <i class="weui-icon-warn weui-icon_toast"></i>
+        <p class="weui-toast__content">请先绑定读者证</p>
+    </div>
+</div>
+<script src="static/js/common.js"></script>
+<script src="static/js/my-profile.js"></script>
+</body>
+</html>

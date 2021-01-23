@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>首页</title>
+
+<link href="https://cdn.bootcdn.net/ajax/libs/weui/2.3.0/style/weui.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="static/css/weui.min.css">
+<link rel="stylesheet" href="static/css/index.css">
+<script src="static/js/zepto.min.js"></script>
+</head>
+<body>
+<div class="wrap content">
+
+    <!-- 头部 -->
+    <div class="head-box">
+        <div class="logo">
+            <img class="logo-img" src="static/images/logo.jpg">
+            <p class="title">重庆交通职业学院图书馆</p>
+        </div>
+        <div class="top-left">
+            <!-- <img id="top_qr" src="static/images/home@code.png"> -->
+        </div>
+        <div class="top-right">
+            <a href="search.html"><img src="static/images/home@search.png"></a>
+        </div>
+    </div>
+
+    <!-- 菜单 -->
+    <div class="menu">
+        <a href="borrow.html">
+            <div class="menu-img">
+                <img src="static/images/home@borrowing.png">
+                <p>在借中</p>
+                <span class="tips-number" id="borrowing_number" style="display: none;">0</span>
+            </div>
+        </a>
+        <a href="borrow.html?name=tab2">
+            <div class="menu-img">
+                <img src="static/images/home@overdue.png">
+                <p>将过期</p>
+                <span class="tips-number" id="will_number" style="display: none;">0</span>
+            </div>
+        </a>
+        <a href="borrow.html?name=tab3">
+            <div class="menu-img">
+                <img src="static/images/home@overdued.png">
+                <p>已过期</p>
+                <span class="tips-number" id="expire_number" style="display: none;">0</span>
+            </div>
+        </a>
+        <!-- <a href="borrow.html?name=tab4">
+            <div class="menu-img">
+                <img src="static/images/home@detailed_list.png">
+                <p>借阅清单</p>
+            </div>
+        </a> -->
+    </div>
+
+    <!-- 馆藏数据 -->
+    <div class="nums">
+        <a href="javascript:" class="nums-library">
+            <i></i>
+            <p>馆藏数量 <span class="library_count">0</span></p>
+        </a>
+        <a href="javascript:" class="nums-borrow">
+            <i></i>
+            <p>累计借还 <span class="borrow_count">0</span></p>
+        </a>
+    </div>
+
+    <!-- 读者服务 -->
+    <div class="grids has-more dwo-mt10">
+        <div class="grids-title dwo-title">
+            <h2>读者服务</h2>
+        </div>
+        <div class="weui-grids">
+            <a href="search.html" class="weui-grid">
+                <div class="weui-grid__icon">
+                    <img src="static/images/icon@search.png" alt="">
+                </div>
+                <p class="weui-grid__label">馆藏检索</p>
+            </a>
+            <a href="top.html" class="weui-grid">
+                <div class="weui-grid__icon">
+                    <img src="static/images/icon@top.png" alt="">
+                </div>
+                <p class="weui-grid__label">借阅排行榜</p>
+            </a>
+            <a href="my.html" class="weui-grid">
+                <div class="weui-grid__icon">
+                    <img src="static/images/icon@my.png" alt="">
+                </div>
+                <p class="weui-grid__label">个人中心</p>
+            </a>
+            
+            <a href="javascript:;" class="weui-grid weui-grid-more">
+                <div class="weui-grid__icon">
+                    <img src="static/images/icon@face.png" alt="">
+                </div>
+                <p class="weui-grid__label">微信录脸</p>
+            </a>
+            <!-- <a href="javascript:;" class="weui-grid">
+                <div class="weui-grid__icon">
+                    <img src="static/images/icon@renew.png" alt="">
+                </div>
+                <p class="weui-grid__label">图书续借</p>
+            </a>
+            <a href="javascript:;" class="weui-grid">
+                <div class="weui-grid__icon">
+                    <img src="static/images/icon@my_borrow.png" alt="">
+                </div>
+                <p class="weui-grid__label">我的借阅</p>
+            </a> -->
+            <!-- <a href="" class="weui-grid weui-grid-more">
+                <div class="weui-grid__icon">
+                    <img src="static/images/icon10.png" alt="">
+                </div>
+                <p class="weui-grid__label">新增待定</p>
+            </a> -->
+        </div>
+    </div>
+    <div class="grids-more"><span class="toggle">更多服务</span></div>
+
+    <!--BEGIN dialog2-->
+    <div class="js_dialog" id="iosDialog2" style="display: none;">
+        <div class="weui-mask"></div>
+        <div class="weui-dialog">
+            <div class="weui-dialog__bd"><div id="qrcodeimg" class='tcenter'></div></div>
+            <div class="weui-dialog__ft">
+                <a href="javascript:" id="close_qrcode" class="weui-dialog__btn weui-dialog__btn_primary">关闭</a>
+            </div>
+        </div>
+    </div>
+    <!--END dialog2-->
+    <!-- 读者证 -->
+    <div class="card">
+        <div class="card-title">
+            <img src="static/images/home@card.png">
+        </div>
+        <div class="card-content card-bind" style="display: block">
+            <p class="card-tips">您还没有绑定读者证哦~</p>
+            <div class="card-bind-btn button-sp-area">
+                <a href="card.html" id="bind-action" class="weui-btn weui-btn_primary">立即绑定 + </a>
+            </div>
+        </div>
+        <div class="card-content card-unlock" style="display: none">
+            <div class="card-box">
+                <a href="javascript:;" id="unlock-action" class="unlock weui-btn weui-btn_plain-primary">解 绑</a>
+                <img class="card-barcode" id="qr" src="static/images/home@code.png">
+                <!-- <p class="card-name">刘凯</p>
+                <p class="card-number">10230000069014</p>
+                <p class="card-status">使用中</p> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 新书列表 -->
+    <div class="grids dwo-mt10">
+        <div class="grids-title dwo-title">
+            <h2>新书通报</h2>
+        </div>
+        <div class="weui-panel__bd book-list">
+            <!-- <a href="javascript:" class="weui-media-box weui-media-box_appmsg">
+                <div class="weui-media-box__hd">
+                    <img class="weui-media-box__thumb" src="https://img9.doubanio.com/view/subject/m/public/s33722595.jpg" referrerPolicy="no-referrer"  alt="">
+                </div>
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title">月球城市</h4>
+                    <p class="weui-media-box__desc">[美] 艾萨克·巴什维斯·辛格</p>
+                    <p class="weui-media-box__desc">出版社：<span class="right">北京人民出版社</span></p>
+                    <p class="weui-media-box__desc">出版时间：<span class="right">2020.6</span></p>
+                </div>
+            </a> -->
+        </div>
+    </div>
+</div>
+<!-- <script src="https://res.wx.qq.com/open/libs/weuijs/1.2.1/weui.min.js"></script> -->
+<script src="static/js/qrcode.js"></script>
+<script src="static/js/common.js"></script>
+<script src="static/js/index.js"></script>
+
+       <script >
+
+
+</script>
+</body>
+</html>

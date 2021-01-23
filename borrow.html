@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>借阅列表</title>
+
+<link href="https://cdn.bootcdn.net/ajax/libs/weui/2.3.0/style/weui.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="static/css/weui.min.css">
+<link rel="stylesheet" href="static/css/borrow.css">
+<script src="static/js/zepto.min.js"></script>
+
+</head>
+<body>
+
+<div class="weui-tab borrow-list">
+   <div class="weui-navbar">
+        <a class="weui-navbar__item weui-bar__item_on" id="doing-list" href="#tab1">
+            在借中
+        </a>
+        <a class="weui-navbar__item" id="will-list" href="#tab2">
+            将过期
+        </a>
+        <a class="weui-navbar__item" id="done-list" href="#tab3">
+            已过期
+        </a>
+        <a class="weui-navbar__item" id="over_list" href="#tab4">
+            借阅清单
+        </a>
+    </div>
+    <div class="weui-tab__panel">
+        <div id="tab1" class="weui_tab_bd_item weui_tab_bd_item_active">
+            <div class="list-top">
+            	<p>共 <span class="list-number borrow_number">0</span> 本在借图书</p>
+            	<a href="javascript:;" class="renew renew-borrowing-all" style="display: none;"><img class="renew-img" src="static/images/renew-all.png">续借</a>
+            </div>
+            <div class="weui-panel__bd book-list" id="my_borrowing_list">
+	            <!-- <a href="javascript:" class="weui-media-box weui-media-box_appmsg">
+	                <div class="weui-media-box__hd">
+	                    <img class="weui-media-box__thumb" src="https://img9.doubanio.com/view/subject/m/public/s33722595.jpg" alt="">
+	                </div>
+	                <div class="weui-media-box__bd">
+	                    <h4 class="weui-media-box__title">月球城市</h4>
+	                    <p class="weui-media-box__desc">[美] 艾萨克·巴什维斯·辛格</p>
+	                    <p class="weui-media-box__desc">ISBN：<span class="right">9787564017484</span></p>
+	                    <p class="weui-media-box__desc">借阅时间：<span class="right">2020-09-01</span></p>
+	                    <p class="weui-media-box__desc">应还时间：<span class="right">2020-09-17</span></p>
+	                    <p class="weui-media-box__desc item-renew">续借</p>
+	                </div>
+	            </a>
+	            <a href="javascript:" class="weui-media-box weui-media-box_appmsg">
+	                <div class="weui-media-box__hd">
+	                    <img class="weui-media-box__thumb" src="https://img9.doubanio.com/view/subject/m/public/s33722595.jpg" alt="">
+	                </div>
+	                <div class="weui-media-box__bd">
+	                    <h4 class="weui-media-box__title">月球城市</h4>
+	                    <p class="weui-media-box__desc">[美] 艾萨克·巴什维斯·辛格</p>
+	                    <p class="weui-media-box__desc">ISBN：<span class="right">9787564017484</span></p>
+	                    <p class="weui-media-box__desc">借阅时间：<span class="right">2020-09-01</span></p>
+	                    <p class="weui-media-box__desc">应还时间：<span class="right">2020-09-17</span></p>
+	                    <p class="weui-media-box__desc item-renew">续借</p>
+	                </div>
+	            </a>
+	            <a href="javascript:" class="weui-media-box weui-media-box_appmsg">
+	                <div class="weui-media-box__hd">
+	                    <img class="weui-media-box__thumb" src="https://img9.doubanio.com/view/subject/m/public/s33722595.jpg" alt="">
+	                </div>
+	                <div class="weui-media-box__bd">
+	                    <h4 class="weui-media-box__title">月球城市</h4>
+	                    <p class="weui-media-box__desc">[美] 艾萨克·巴什维斯·辛格</p>
+	                    <p class="weui-media-box__desc">ISBN：<span class="right">9787564017484</span></p>
+	                    <p class="weui-media-box__desc">借阅时间：<span class="right">2020-09-01</span></p>
+	                    <p class="weui-media-box__desc">应还时间：<span class="right">2020-09-17</span></p>
+	                    <p class="weui-media-box__desc item-renew">续借</p>
+	                </div>
+	            </a> -->
+	        </div>
+	    </div>
+        
+        <div id="tab2" class="weui_tab_bd_item">
+            <div class="list-top">
+            	<p>共 <span class="list-number will_number">0</span> 本在借图书</p>
+            	<a href="javascript:;" class="renew renew-expire-all" style="display: none;"><img class="renew-img" src="static/images/renew-all.png">续借</a>
+            </div>
+            <div class="weui-panel__bd book-list" id="my_will_list">
+	            <!-- <a href="javascript:" class="weui-media-box weui-media-box_appmsg">
+	                <div class="weui-media-box__hd">
+	                    <img class="weui-media-box__thumb" src="https://img9.doubanio.com/view/subject/m/public/s33722595.jpg" alt="">
+	                </div>
+	                <div class="weui-media-box__bd">
+	                    <h4 class="weui-media-box__title">月球城市</h4>
+	                    <p class="weui-media-box__desc">[美] 艾萨克·巴什维斯·辛格</p>
+	                    <p class="weui-media-box__desc">ISBN：<span class="right">9787564017484</span></p>
+	                    <p class="weui-media-box__desc">借阅时间：<span class="right">2020-09-01</span></p>
+	                    <p class="weui-media-box__desc">应还时间：<span class="right red-time">2020-09-17</span></p>
+	                    <p class="weui-media-box__desc item-renew">续借</p>
+	                </div>
+	            </a>
+	            <a href="javascript:" class="weui-media-box weui-media-box_appmsg">
+	                <div class="weui-media-box__hd">
+	                    <img class="weui-media-box__thumb" src="https://img9.doubanio.com/view/subject/m/public/s33722595.jpg" alt="">
+	                </div>
+	                <div class="weui-media-box__bd">
+	                    <h4 class="weui-media-box__title">月球城市</h4>
+	                    <p class="weui-media-box__desc">[美] 艾萨克·巴什维斯·辛格</p>
+	                    <p class="weui-media-box__desc">ISBN：<span class="right">9787564017484</span></p>
+	                    <p class="weui-media-box__desc">借阅时间：<span class="right">2020-09-01</span></p>
+	                    <p class="weui-media-box__desc">应还时间：<span class="right red-time">2020-09-17</span></p>
+	                    <p class="weui-media-box__desc item-renew">续借</p>
+	                </div>
+	            </a> -->
+	        </div>
+        </div>
+        <div id="tab3" class="weui_tab_bd_item">
+            <div class="weui-panel__bd book-list" id="my_expire_list">
+	            <!-- <a href="javascript:" class="weui-media-box weui-media-box_appmsg">
+	                <div class="weui-media-box__hd">
+	                    <img class="weui-media-box__thumb" src="https://img9.doubanio.com/view/subject/m/public/s33722595.jpg" alt="">
+	                </div>
+	                <div class="weui-media-box__bd">
+	                    <h4 class="weui-media-box__title">月球城市</h4>
+	                    <p class="weui-media-box__desc">[美] 艾萨克·巴什维斯·辛格</p>
+	                    <p class="weui-media-box__desc">ISBN：<span class="right">9787564017484</span></p>
+	                    <p class="weui-media-box__desc">借阅时间：<span class="right">2020-09-01</span></p>
+	                    <p class="weui-media-box__desc">应还时间：<span class="right">2020-09-17</span></p>
+	                </div>
+	            </a> -->
+	        </div>
+        </div>
+        <div id="tab4" class="weui_tab_bd_item">
+            <div class="weui-panel__bd book-list" id="my_over_list">
+	           <!--  <a href="javascript:" class="weui-media-box weui-media-box_appmsg">
+	                <div class="weui-media-box__hd">
+	                    <img class="weui-media-box__thumb" src="https://img9.doubanio.com/view/subject/m/public/s33722595.jpg" alt="">
+	                </div>
+	                <div class="weui-media-box__bd">
+	                    <h4 class="weui-media-box__title">月球城市</h4>
+	                    <p class="weui-media-box__desc">[美] 艾萨克·巴什维斯·辛格</p>
+	                    <p class="weui-media-box__desc">借阅时间：<span class="right">2020-09-01</span></p>
+	                    <p class="weui-media-box__desc">应还时间：<span class="right">2020-09-17</span></p>
+	                    <p class="weui-media-box__desc">操作类型：<span class="right borrow-action">还书</span></p>
+	                    <p class="weui-media-box__desc">操作时间：<span class="right">2020-09-17 16:18:31</span></p>
+	                </div>
+	            </a>
+	            <a href="javascript:" class="weui-media-box weui-media-box_appmsg">
+	                <div class="weui-media-box__hd">
+	                    <img class="weui-media-box__thumb" src="https://img9.doubanio.com/view/subject/s/public/s33747736.jpg" alt="">
+	                </div>
+	                <div class="weui-media-box__bd">
+	                    <h4 class="weui-media-box__title">随遇而安</h4>
+	                    <p class="weui-media-box__desc">[美] 艾萨克·巴什维斯·辛格</p>
+	                    <p class="weui-media-box__desc">借阅时间：<span class="right">2020-09-01</span></p>
+	                    <p class="weui-media-box__desc">应还时间：<span class="right">2020-09-17</span></p>
+	                    <p class="weui-media-box__desc">操作类型：<span class="right return-action">借书</span></p>
+	                    <p class="weui-media-box__desc">操作时间：<span class="right">2020-09-17 16:18:31</span></p>
+	                </div>
+	            </a>
+	            <a href="javascript:" class="weui-media-box weui-media-box_appmsg">
+	                <div class="weui-media-box__hd">
+	                    <img class="weui-media-box__thumb" src="https://img9.doubanio.com/view/subject/s/public/s33542405.jpg" alt="">
+	                </div>
+	                <div class="weui-media-box__bd">
+	                    <h4 class="weui-media-box__title">经乱离后天恩流夜郎，忆旧游，书怀赠江夏韦太守良宰</h4>
+	                    <p class="weui-media-box__desc">未名</p>
+	                    <p class="weui-media-box__desc">借阅时间：<span class="right">2020-09-01</span></p>
+	                    <p class="weui-media-box__desc">应还时间：<span class="right">2020-09-17</span></p>
+	                    <p class="weui-media-box__desc">操作类型：<span class="right return-action">借书</span></p>
+	                    <p class="weui-media-box__desc">操作时间：<span class="right">2020-09-17 16:18:31</span></p>
+	                </div>
+	            </a>
+	            <a href="javascript:" class="weui-media-box weui-media-box_appmsg">
+	                <div class="weui-media-box__hd">
+	                    <img class="weui-media-box__thumb" src="https://img9.doubanio.com/view/subject/m/public/s33722595.jpg" alt="">
+	                </div>
+	                <div class="weui-media-box__bd">
+	                    <h4 class="weui-media-box__title">月球城市</h4>
+	                    <p class="weui-media-box__desc">[美] 艾萨克·巴什维斯·辛格</p>
+	                    <p class="weui-media-box__desc">借阅时间：<span class="right">2020-09-01</span></p>
+	                    <p class="weui-media-box__desc">应还时间：<span class="right">2020-09-17</span></p>
+	                    <p class="weui-media-box__desc">操作类型：<span class="right borrow-action">还书</span></p>
+	                    <p class="weui-media-box__desc">操作时间：<span class="right">2020-09-17 16:18:31</span></p>
+	                </div>
+	            </a>
+	            <a href="javascript:" class="weui-media-box weui-media-box_appmsg">
+	                <div class="weui-media-box__hd">
+	                    <img class="weui-media-box__thumb" src="https://img9.doubanio.com/view/subject/s/public/s33747736.jpg" alt="">
+	                </div>
+	                <div class="weui-media-box__bd">
+	                    <h4 class="weui-media-box__title">随遇而安</h4>
+	                    <p class="weui-media-box__desc">[美] 艾萨克·巴什维斯·辛格</p>
+	                    <p class="weui-media-box__desc">借阅时间：<span class="right">2020-09-01</span></p>
+	                    <p class="weui-media-box__desc">应还时间：<span class="right">2020-09-17</span></p>
+	                    <p class="weui-media-box__desc">操作类型：<span class="right return-action">借书</span></p>
+	                    <p class="weui-media-box__desc">操作时间：<span class="right">2020-09-17 16:18:31</span></p>
+	                </div>
+	            </a>
+	            <a href="javascript:" class="weui-media-box weui-media-box_appmsg">
+	                <div class="weui-media-box__hd">
+	                    <img class="weui-media-box__thumb" src="static/images/no-book-img.png" alt="">
+	                </div>
+	                <div class="weui-media-box__bd">
+	                    <h4 class="weui-media-box__title">经乱离后天恩流夜郎，忆旧游，书怀赠江夏韦太守良宰</h4>
+	                    <p class="weui-media-box__desc">未名</p>
+	                    <p class="weui-media-box__desc">借阅时间：<span class="right">2020-09-01</span></p>
+	                    <p class="weui-media-box__desc">应还时间：<span class="right">2020-09-17</span></p>
+	                    <p class="weui-media-box__desc">操作类型：<span class="right return-action">借书</span></p>
+	                    <p class="weui-media-box__desc">操作时间：<span class="right">2020-09-17 16:18:31</span></p>
+	                </div>
+	            </a> -->
+	        </div>
+        </div>
+        <p class="book-over" style="display: none;">已经到底了哦~</p>
+    </div>
+</div>
+
+<script src="static/js/common.js"></script>
+<script src="static/js/borrow.js"></script>
+<script type="text/javascript">
+$(function(){
+
+});
+</script>
+</body>
+</html>

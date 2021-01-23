@@ -1,0 +1,192 @@
+body { 
+	background-color: #f7f7f7;
+}
+
+body {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+/*头部*/
+.head-box { 
+	height: 200px; 
+	border-radius: 0; 
+	background: #3db271; /*绿色 3db271 紫色 7a3b90*/
+	margin-left: -10px; 
+	margin-right: -10px; 
+	margin-top: -10px;
+}
+
+.head-box {
+	position: relative;
+}
+
+.head-box .top-left {
+	position: absolute;
+	top: 25px;
+	left: 25px;
+}
+
+.head-box .top-right {
+	position: absolute;
+	top: 25px;
+	right: 25px;
+}
+
+.head-box .top-left img, .head-box .top-right img {
+	width: 25px;
+	height: 25px;
+}
+
+.logo {
+    text-align: center;
+	padding: 20px 0;
+}
+
+.logo-img {
+	width: 80px;
+	height: 80px;
+	overflow: hidden;
+    border-radius: 50%;
+}
+
+.logo .title {
+	color: #ffffff;
+}
+
+.content {
+	padding: 10px;
+}
+
+/*菜单*/
+.menu {
+	display: flex;
+	justify-content: space-around;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	/*margin-top: -50px;*/
+	background-color: #ffffff;
+	margin-left: 10px;
+	margin-right: 10px;
+	border-radius: 10px;
+}
+
+.menu .menu-img {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	position: relative;
+}
+
+.menu .menu-img .tips-number {
+	position: absolute;
+	top: -10px;
+	right: -15px;
+	background-color: #F10D1A;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	line-height: 18px;
+	text-align: center;
+	color: #ffffff;
+	font-size: 12px;
+}
+
+.menu .menu-img img {
+	margin: 0 auto;
+	width: 30px;
+	height: 30px;
+}
+
+.menu .menu-img p {
+	padding-top: 10px;
+	font-size: 14px;
+	color: #465566;
+}
+
+.user-profile {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 70px;
+	height: 70px;
+	line-height: 70px;
+	background-color: #ffffff;
+	color: #465566;
+	padding-left: 20px;
+}
+
+.user-profile a, .password-edit a {
+	color: #465566;
+}
+
+.user-profile img {
+	width: 25px;
+	height: 25px;
+	padding-right: 10px;
+	margin-bottom: -7px;
+}
+
+.password-edit {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 70px;
+	line-height: 70px;
+	background-color: #ffffff;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color: #465566;
+	padding-left: 20px;
+}
+
+.password-edit img {
+	width: 25px;
+	height: 25px;
+	padding-right: 10px;
+	margin-bottom: -7px;
+}
+
+.user-info {
+	display: flex;
+	justify-content: space-around;
+	background-color: #ffffff;
+	margin-bottom: 20px;
+	align-items: center;
+	height: 120px;
+	color: #465566;
+}
+
+.user-info-box {
+	padding: 15px 0;
+	background-color: #ffffff;
+	text-align: center;
+	color: #465566;
+	margin-bottom: 20px;
+}
+
+.user-info-box .info-number {
+	color: #028D59;
+	padding-top: 20px;
+}
+
+.info-box-2 {
+	padding-top: 30px;
+}
+
+.user-info .info {
+	text-align: center;
+}
+
+.user-info .info .info-number {
+	color: #028D59;
+	padding-top: 20px;
+}
+
+/*遮罩层*/
+.weui_dialog {
+	top: 40%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}

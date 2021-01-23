@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>读者账号绑定</title>
+
+<link href="https://cdn.bootcdn.net/ajax/libs/weui/2.3.0/style/weui.min.css" rel="stylesheet">
+<link rel="stylesheet" href="static/css/weui.min.css">
+<link rel="stylesheet" href="static/css/card.css">
+<script src="static/js/zepto.min.js"></script>
+</head>
+<body>
+<div class="topbar">
+	<img class="bind-card" src="static/images/card@bind-card.png">
+</div>
+
+<div class="wrap content">
+	<div class="weui-cells weui-cells_form">
+		<div class="weui-cell weui-cell_active">
+			<div class="weui-cell__hd"><label class="weui-label">账号</label></div>
+			<div class="weui-cell__bd">
+				<input id="account" class="weui-input" placeholder="请输入读者账号">
+			</div>
+		</div>
+		<div class="weui-cell weui-cell_active">
+			<div class="weui-cell__hd"><label class="weui-label">密码</label></div>
+			<div class="weui-cell__bd">
+				<input id="secret" class="weui-input" type="password" placeholder="请输入密码">
+			</div>
+		</div>
+	</div>
+	<div class="submit-action">
+		<a href="javascript:" class="weui-btn weui-btn_primary">绑定</a>
+	</div>
+</div>
+
+<script src="https://res.wx.qq.com/open/libs/weuijs/1.2.1/weui.min.js"></script>
+<script src="static/js/common.js"></script>
+<script src="static/js/card.js"></script>
+</body>
+</html>
